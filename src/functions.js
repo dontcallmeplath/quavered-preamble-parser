@@ -45,3 +45,15 @@ export function findEndEees() {
   }
   return `The Preamble contains ${numberOfEndEees} instances of words that end with the letter E.`;
 }
+
+export function findTeesAndEees() {
+  let sanitized = preamble.toUpperCase().replaceAll(",", "");
+  let words = sanitized.split(" ");
+  let numberOfTeesAndEees = 0;
+  words.forEach((word) => {
+    if (word.startsWith("T") && word.endsWith("E")) {
+      numberOfTeesAndEees++;
+    }
+  });
+  return `The Preamble contains ${numberOfTeesAndEees} instances of words that start with the letter T and end with the letter E.`;
+}
