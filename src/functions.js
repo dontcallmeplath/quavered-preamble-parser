@@ -31,3 +31,17 @@ export function findFirstTees() {
   }
   return `The Preamble contains ${numberOfFirstTees} instances of words that start with the letter T.`;
 }
+
+export function findEndEees() {
+  let numberOfEndEees = 0;
+  for (let index = 0; index <= preamble.length; index++) {
+    preamble.replaceAll(",", "");
+    if (
+      preamble.toUpperCase().charAt(index) === "E" &&
+      preamble.charAt(index + 1) === " "
+    ) {
+      numberOfEndEees++;
+    }
+  }
+  return `The Preamble contains ${numberOfEndEees} instances of words that end with the letter E.`;
+}

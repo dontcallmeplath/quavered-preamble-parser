@@ -5,6 +5,7 @@ import { setString } from "./functions.js";
 import { setLength } from "./functions.js";
 import { findTees } from "./functions.js";
 import { findFirstTees } from "./functions.js";
+import { findEndEees } from "./functions.js";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -20,6 +21,9 @@ document.querySelector("#app").innerHTML = `
     </div>
     <div class="card">
     ${findFirstTees()}
+    </div>
+    <div class="card">
+    ${findEndEees()}
     </div>
     </div>
     `;
