@@ -2,13 +2,13 @@ import "./style.css";
 // import javascriptLogo from "./javascript.svg";
 // import viteLogo from "/vite.svg";
 import { setString } from "./functions.js";
-import { setLength } from "./functions.js";
-import { findTees } from "./functions.js";
-import { findFirstTees } from "./functions.js";
-import { findEndEees } from "./functions.js";
-import { findTeesAndEees } from "./functions.js";
+import { findCountOfFirstLetter } from "./functions.js";
+import { findCountOfLastLetter } from "./functions.js";
+import { findCountOfTwoLetters } from "./functions.js";
 
 const preamble = `We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.`;
+let sanitized = preamble.toUpperCase().replaceAll(",", "");
+let words = sanitized.split(" ");
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -17,19 +17,13 @@ document.querySelector("#app").innerHTML = `
     ${setString(preamble)}
     </p>
     <div class="card">
-    ${setLength(preamble)}
+    ${findCountOfFirstLetter(words, "T")}
     </div>
     <div class="card">
-    ${findTees(preamble, "T")}
+    ${findCountOfLastLetter(words, "E")}
     </div>
     <div class="card">
-    ${findFirstTees(preamble, "T")}
-    </div>
-    <div class="card">
-    ${findEndEees(preamble, "E")}
-    </div>
-    <div class="card">
-    ${findTeesAndEees(preamble, "T", "E")}
+    ${findCountOfTwoLetters(words, "T", "E")}
     </div>
     </div>
     `;

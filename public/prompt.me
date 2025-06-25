@@ -10,8 +10,8 @@ problems you ran into along the way and describe how you solved them.
 
 ******************************************************************************************
 Hoping to incorporate startsWith() and endsWith() methods to check for relevant character
-J/k - those methods check first and last characters of entire string. Would need to break
-string into an array of words maybe and iterate with foreach loop to check each word 
+J/k - forgot those methods check first and last characters of entire string. Would need 
+to break string into an array of words maybe and iterate with foreach loop to check each word 
 individually for each parameter. May look into that more once I have the verbose versions 
 of the functions working correctly.
 ^^ ended up doing that option in the final function I wrote to find instances of words
@@ -20,3 +20,20 @@ with T and E.
 Refactoring now to see if I can make this a little cleaner. Plan to ditch the initial
 little counting functions and whittle down the language to accept parameters rather than
 hard coding what each function is specifically trying to match.
+
+I'm currently stuck on refactoring the function that's matching one parameter letter to two
+different spots in the words and fiddling with a ternary to complete the return
+statement accurately to reflect "start of word" vs "end of word".
+
+Before pushing the return statement further since the logic is wrong I'm reading about 
+more methods on MDN that I may not already know about.. kind of considering using 
+.includes and also index to try to specify whether the letter is at first index or 
+max index ? and have it bump a certain counter variable depending on which index it's at ?
+
+Found out "count = 0" cannot be a global variable or the functions will add into each other
+
+I got hung up here pushing to figure out a way to make one function cover matching both
+first letter or last letter. I didn't want to get too deep into nesting if-statements. And
+I couldn't see a clear use case where it would be significantly more beneficial to not have
+them be two separate functions. I think this makes okay sense. I'd love to see some other 
+people's solutions. 
