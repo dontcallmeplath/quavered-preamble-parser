@@ -1,30 +1,28 @@
-const preamble = `We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defense, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.`;
-
-export function setString() {
-  return preamble.toUpperCase();
+export function setString(string) {
+  return string.toUpperCase();
 }
 
-export function setLength() {
-  let length = preamble.length;
+export function setLength(string) {
+  let length = string.length;
   return `The Preamble is ${length} characters long.`;
 }
 
-export function findTees() {
+export function findTees(string, ltr) {
   let numberOfTees = 0;
-  for (let index = 0; index <= preamble.length; index++) {
-    if (preamble.toUpperCase().charAt(index).includes("T")) {
+  for (let index = 0; index <= string.length; index++) {
+    if (string.toUpperCase().charAt(index).includes(ltr)) {
       numberOfTees++;
     }
   }
   return `The Preamble contains ${numberOfTees} instances of the letter T.`;
 }
 
-export function findFirstTees() {
+export function findFirstTees(string, ltr) {
   let numberOfFirstTees = 0;
-  for (let index = 0; index <= preamble.length; index++) {
+  for (let index = 0; index <= string.length; index++) {
     if (
-      preamble.toUpperCase().charAt(index) === "T" &&
-      preamble.charAt(index - 1) === " "
+      string.toUpperCase().charAt(index) === ltr &&
+      string.charAt(index - 1) === " "
     ) {
       numberOfFirstTees++;
     }
@@ -32,13 +30,13 @@ export function findFirstTees() {
   return `The Preamble contains ${numberOfFirstTees} instances of words that start with the letter T.`;
 }
 
-export function findEndEees() {
+export function findEndEees(string, ltr) {
   let numberOfEndEees = 0;
-  for (let index = 0; index <= preamble.length; index++) {
-    preamble.replaceAll(",", "");
+  for (let index = 0; index <= string.length; index++) {
+    string.replaceAll(",", "");
     if (
-      preamble.toUpperCase().charAt(index) === "E" &&
-      preamble.charAt(index + 1) === " "
+      string.toUpperCase().charAt(index) === ltr &&
+      string.charAt(index + 1) === " "
     ) {
       numberOfEndEees++;
     }
@@ -46,12 +44,12 @@ export function findEndEees() {
   return `The Preamble contains ${numberOfEndEees} instances of words that end with the letter E.`;
 }
 
-export function findTeesAndEees() {
-  let sanitized = preamble.toUpperCase().replaceAll(",", "");
+export function findTeesAndEees(string, ltr1, ltr2) {
+  let sanitized = string.toUpperCase().replaceAll(",", "");
   let words = sanitized.split(" ");
   let numberOfTeesAndEees = 0;
   words.forEach((word) => {
-    if (word.startsWith("T") && word.endsWith("E")) {
+    if (word.startsWith(ltr1) && word.endsWith(ltr2)) {
       numberOfTeesAndEees++;
     }
   });
