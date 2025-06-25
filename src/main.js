@@ -3,6 +3,7 @@ import "./style.css";
 // import viteLogo from "/vite.svg";
 import { setString } from "./functions.js";
 import { setLength } from "./functions.js";
+import { findTees } from "./functions.js";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -12,6 +13,9 @@ document.querySelector("#app").innerHTML = `
     </p>
     <div class="card">
     ${setLength()}
+    </div>
+    <div class="card">
+    ${findTees()}
     </div>
     </div>
     `;

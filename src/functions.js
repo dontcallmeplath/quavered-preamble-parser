@@ -9,3 +9,13 @@ export function setLength() {
   let length = preamble.length;
   return `The Preamble is ${length} characters long.`;
 }
+
+export function findTees() {
+  let numberOfTees = 0;
+  for (let index = 0; index <= preamble.length; index++) {
+    if (preamble.toUpperCase().charAt(index) === "T") {
+      numberOfTees++;
+    }
+  }
+  return `The Preamble contains ${numberOfTees} instances of the letter T.`;
+}
