@@ -1,6 +1,5 @@
 import "./style.css";
-// import javascriptLogo from "./javascript.svg";
-// import viteLogo from "/vite.svg";
+import preamblepic from "./preamble.jpg";
 import { setString } from "./functions.js";
 import { findCountOfFirstLetter } from "./functions.js";
 import { findCountOfLastLetter } from "./functions.js";
@@ -11,19 +10,22 @@ let sanitized = preamble.toUpperCase().replaceAll(",", "");
 let words = sanitized.split(" ");
 
 document.querySelector("#app").innerHTML = `
-  <div>
+  <div class="content-area">
+    <img class="header-pic" src=${preamblepic} alt="Photo-realistic image of top portion of paper on which the Constitution was written"></>
     <h1>PREAMBLE TO THE U.S. CONSTITUTION:</h1>
-    <p class="read-the-docs">
+    <h4 class="heading">
     ${setString(preamble)}
-    </p>
-    <div class="card">
-    ${findCountOfFirstLetter(words, "T")}
+    </h4>
+    <div class="flex-box">
+      <div class="card">
+      ${findCountOfFirstLetter(words, "T")}
+      </div>
+      <div class="card">
+      ${findCountOfLastLetter(words, "E")}
+      </div>
+      <div class="card">
+      ${findCountOfTwoLetters(words, "T", "E")}
+      </div>
     </div>
-    <div class="card">
-    ${findCountOfLastLetter(words, "E")}
-    </div>
-    <div class="card">
-    ${findCountOfTwoLetters(words, "T", "E")}
-    </div>
-    </div>
+  </div>
     `;
