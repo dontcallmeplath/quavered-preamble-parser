@@ -9,7 +9,7 @@ I need to be able to execute what you send me, and see your code generate
 its answer(s).  And what would be extremely helpful is if you document the 
 problems you ran into along the way and describe how you solved them.
 ******************************************************************************************
-[Netlify Site:]()
+[Netlify Site:](https://hilarious-marzipan-9ca4bc.netlify.app/)
 ******************************************************************************************
 Hoping to incorporate startsWith() and endsWith() methods to check for relevant character
 J/k - forgot those methods check first and last characters of entire string. Would need 
